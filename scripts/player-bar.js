@@ -26,7 +26,8 @@
   });
 
 //--To accept input time position from user--
-  $('#time-control input').on('input',function(){
+  $('#time-control input').on('input',function(event){
+    console.log(event);
     player.skipTo(event.target.value);//what 'event' the function prefer to? 
   });
 
@@ -37,9 +38,7 @@
     const duration = player.getDuration();
     const percent = (currentTime / duration) * 100;
     $('#time-control .current-time').text(currentTime);
-    $('#time-control input').val(percent); // why not use .seek-bar
+    $('#time-control input').val(percent); // why not use .seek-bar?
   }, 1000);
-  
-
 
 }
